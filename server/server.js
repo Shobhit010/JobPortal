@@ -33,6 +33,4 @@ const PORT = process.env.PORT || 5000
 // Sentry Configuration
 Sentry.setupExpressErrorHandler(app);
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`)
-})
+export default app
