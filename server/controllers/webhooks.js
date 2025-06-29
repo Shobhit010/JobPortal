@@ -60,3 +60,5 @@ const clerkWebhookHandler = async (req, res) => {
     }
 
 }
+
+export const clerkWebhooks = clerkWebhookHandler
