@@ -1,0 +1,69 @@
+.
+├── client/
+│   ├── node_modules/
+│   │   └── all installed packages
+│   ├── public/
+│   │   └── vite.svg
+│   ├── src/
+│   │   ├── assets/
+│   │   │   └── all the assets need to make this project
+│   │   ├── components/
+│   │   │   ├── AppDownload.jsx
+│   │   │   ├── Footer.jsx
+│   │   │   ├── Hero.jsx
+│   │   │   ├── JobCard.jsx
+│   │   │   ├── JobListing.jsx
+│   │   │   ├── Loading.jsx
+│   │   │   ├── Navbar.jsx
+│   │   │   └── RecruiterLogin.jsx
+│   │   ├── context/
+│   │   │   └── AppContext.jsx
+│   │   ├── pages/
+│   │   │   ├── AddJob.jsx
+│   │   │   ├── Applications.jsx
+│   │   │   ├── ApplyJob.jsx
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── Home.jsx
+│   │   │   ├── ManageJob.jsx
+│   │   │   └── ViewAppications.jsx
+│   │   ├── App.css
+│   │   ├── App.jsx
+│   │   ├── index.css
+│   │   └── main.jsx
+│   ├── .env
+│   ├── .gitignore
+│   ├── eslint.config.js
+│   ├── index.html
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── README.md
+│   ├── vercel.json
+│   └── vite.config.js
+├── server/
+│   ├── config/
+│   │   ├── cloudinary.js
+│   │   ├── db.js
+│   │   ├── intrument.js
+│   │   └── multer.js
+│   ├── controllers/
+│   │   ├── companyController.js
+│   │   ├── jobController.js
+│   │   ├── userController.js
+│   │   └── webhooks.js
+│   ├── middlewares/
+│   │   └── authMiddleware.js
+│   ├── models/
+│   │   ├── Company.js
+│   │   ├── Job.js
+│   │   ├── JobApplication.js
+│   │   └── User.js
+│   ├── node_modules/
+│   │   └── all the npm packages intalled there
+│   ├── routes
+│   ├── utils
+│   ├── .env
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── server.js
+│   └── vercel.json
+└── .gitignore
