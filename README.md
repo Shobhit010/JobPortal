@@ -9,11 +9,11 @@
 
 ## 📁 Project Structure
 
-`
+```
 JobFinder/
 ├── client/ # Frontend (React + Vite)
 └── server/ # Backend (Node.js + Express + MongoDB)
-`
+```
 
 ## 🔧 Tech Stack
 
