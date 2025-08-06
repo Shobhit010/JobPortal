@@ -11,7 +11,12 @@ import jobRoutes from './routes/jobRoutes.js'
 import userRoutes from './routes/userRoutes.js'
 import { clerkMiddleware } from '@clerk/express'
 
-const allowedOrigins = ['https://job-portal-client-git-main-shobhits-teams-projects.vercel.app'];
+const allowedOrigins = [
+  'https://job-portal-client-psi-three.vercel.app/',
+  'https://job-portal-client-git-main-shobhits-teams-projects.vercel.app/',
+  'https://job-portal-client-8uz1x1x1e-shobhits-teams-projects.vercel.app/',
+  'http://localhost:5173'
+];
 
 // Initialize Express
 const app = express()
@@ -22,7 +27,8 @@ await connectCloudinary()
 
 // Middlewares
 // app.use(cors())
-app.use(cors({
+
+const corsOptions = {
   origin: function (origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true)
@@ -30,11 +36,13 @@ app.use(cors({
       callback(new Error('Not allowed by CORS'))
     }
   },
-  credentials: true, // Important if you're using cookies or headers like Authorization
+  credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}))
-app.options('*', cors())
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}
+
+app.use(cors(corsOptions))
+app.options('*', cors(corsOptions))
 app.use(express.json())
 app.use(clerkMiddleware())
 
