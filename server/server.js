@@ -13,7 +13,7 @@ import { clerkMiddleware } from '@clerk/express'
 
 const allowedOrigins = [
   'https://job-portal-client-psi-three.vercel.app',
-  'https://job-portal-client-git-main-shobhits-teams-projects.vercel.app',\
+  'https://job-portal-client-git-main-shobhits-teams-projects.vercel.app',
   'https://job-portal-client-6i3fyu57l-shobhits-teams-projects.vercel.app',
   'https://job-portal-client-8uz1x1x1e-shobhits-teams-projects.vercel.app',
   'http://localhost:5173'
