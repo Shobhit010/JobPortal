@@ -12,21 +12,11 @@ import userRoutes from './routes/userRoutes.js'
 import { clerkMiddleware } from '@clerk/express'
 
 const allowedOrigins = [
-  'https://job-portal-client-psi-three.vercel.app/',
-  'https://job-portal-client-git-main-shobhits-teams-projects.vercel.app/',
-  'https://job-portal-client-8uz1x1x1e-shobhits-teams-projects.vercel.app/',
+  'https://job-portal-client-psi-three.vercel.app',
+  'https://job-portal-client-git-main-shobhits-teams-projects.vercel.app',
+  'https://job-portal-client-8uz1x1x1e-shobhits-teams-projects.vercel.app',
   'http://localhost:5173'
 ];
-
-// Initialize Express
-const app = express()
-
-// Connect to Database
-await connectDB()
-await connectCloudinary()
-
-// Middlewares
-// app.use(cors())
 
 const corsOptions = {
   origin: function (origin, callback) {
@@ -40,6 +30,16 @@ const corsOptions = {
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }
+
+// Initialize Express
+const app = express()
+
+// Connect to Database
+await connectDB()
+await connectCloudinary()
+
+// Middlewares
+// app.use(cors())
 
 app.use(cors(corsOptions))
 // app.options('*', cors(corsOptions))
@@ -59,13 +59,13 @@ app.use('/api/jobs', jobRoutes)
 app.use('/api/users', userRoutes)
 
 // Port
-const PORT = process.env.PORT || 5000
+// const PORT = process.env.PORT || 5000
 
 // Sentry Configuration
 Sentry.setupExpressErrorHandler(app);
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+// app.listen(PORT, () => {
+//   console.log(`Server is running on port ${PORT}`);
+// });
 
 export default app
