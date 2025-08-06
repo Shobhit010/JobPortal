@@ -35,7 +35,7 @@ export const AppContextProvider = (props) => {
 
         try {
 
-            const { data } = await axios.get(backendUrl+'/api/jobs')
+            const { data } = await axios.get(`${backendUrl}/api/jobs`, { withCredentials: true })
 
             if (data.success) {
                 setJobs(data.jobs)
@@ -53,7 +53,7 @@ export const AppContextProvider = (props) => {
     const fetchCompanyData = async () => {
         try {
 
-            const {data} = await axios.get(backendUrl+'/api/company/company',{headers:{token:companyToken}})
+            const {data} = await axios.get(`${backendUrl}/api/company/company`,{headers:{token:companyToken}, withCredentials: true})
 
             if (data.success) {
                 setCompanyData(data.company)
@@ -74,7 +74,7 @@ export const AppContextProvider = (props) => {
 
             const token = await getToken()
 
-            const { data } = await axios.get(backendUrl+'/api/users/user',{headers:{Authorization:`Bearer ${token}`}})
+            const { data } = await axios.get(`${backendUrl}/api/users/user`,{headers:{Authorization:`Bearer ${token}`}, withCredentials: true})
 
             if (data.success) {
                 setUserData(data.user)
@@ -93,7 +93,7 @@ export const AppContextProvider = (props) => {
 
             const token = await getToken()
 
-            const { data } = await axios.get(backendUrl+'/api/users/applications',{headers:{Authorization:`Bearer ${token}`}})
+            const { data } = await axios.get(`${backendUrl}/api/users/applications`,{headers:{Authorization:`Bearer ${token}`}, withCredentials: true})
 
             if (data.success) {
                 setUserApplications(data.applications)
