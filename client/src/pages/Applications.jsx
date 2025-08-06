@@ -30,9 +30,9 @@ const Applications = () => {
 
       const token = await getToken()
 
-      const { data } = await axios.post(backendUrl+'/api/users/update-resume',
+      const { data } = await axios.post(`${backendUrl}/api/users/update-resume`,
         formData, 
-        {headers:{ Authorization:`Bearer ${token}`}}
+        {headers:{ Authorization:`Bearer ${token}`}, withCredentials: true}
       )
 
       if (data.success) {
