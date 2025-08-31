@@ -1,4 +1,4 @@
-import React, { use, useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Quill from 'quill'
 import { JobCategories, JobLocations } from '../assets/assets';
 import axios from 'axios';
@@ -82,7 +82,7 @@ const AddJob = () => {
       <div className='flex flex-col sm:flex-row gap-2 w-full sm:gap-8'>
         <div>
           <p className='mb-2'>Job Category</p>
-          <select className='w-full px-3 py-2 border-2 border-gray-300 rounded' onChange={e => setCategory(e.target.value)}>
+          <select className='w-full px-3 py-2 border-2 border-gray-300 rounded' value={category} onChange={e => setCategory(e.target.value)}>
             {JobCategories.map((category,index) => (
               <option key={index} value={category}>{category}</option>
             ))}
@@ -91,7 +91,7 @@ const AddJob = () => {
 
         <div>
           <p className='mb-2'>Job Location</p>
-          <select className='w-full px-3 py-2 border-2 border-gray-300 rounded' onChange={e => setLocation(e.target.value)}>
+          <select className='w-full px-3 py-2 border-2 border-gray-300 rounded' value={location} onChange={e => setLocation(e.target.value)}>
             {JobLocations.map((location,index) => (
               <option key={index} value={location}>{location}</option>
             ))}
@@ -100,17 +100,17 @@ const AddJob = () => {
 
         <div>
           <p className='mb-2'>Job Level</p>
-          <select className='w-full px-3 py-2 border-2 border-gray-300 rounded' onChange={e => setLevel(e.target.value)}>
-            <option value="Beginner level">Beginner Level</option>
-            <option value="Intermediate level">Intermediate Level</option>
-            <option value="Senior level">Senior Level</option>
+          <select className='w-full px-3 py-2 border-2 border-gray-300 rounded' value={level} onChange={e => setLevel(e.target.value)}>
+            <option value="Beginner Level">Beginner Level</option>
+            <option value="Intermediate Level">Intermediate Level</option>
+            <option value="Senior Level">Senior Level</option>
           </select>
         </div>
       </div>
 
       <div>
           <p className='mb-2'>Job Salary</p>
-          <input min={0} className='w-full px-3 py-2 border-2 border-gray-300 rounded sm:w-[120px]' onChange={e => setSalary(e.target.value)} type="Number" placeholder='2500' />
+          <input min={0} className='w-full px-3 py-2 border-2 border-gray-300 rounded sm:w-[120px]' onChange={e => setSalary(e.target.value)} value={salary} type="number" placeholder='2500' />
         </div>
 
         <button className='w-28 py-3 mt-4 bg-black text-white rounded'>ADD</button>

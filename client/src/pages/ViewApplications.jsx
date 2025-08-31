@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { assets, viewApplicationsPageData } from '../assets/assets'
+import { assets } from '../assets/assets'
 import { useContext } from 'react'
 import { AppContext } from '../context/AppContext'
 import axios from 'axios'
@@ -53,7 +53,7 @@ const ViewApplications = () => {
     if (companyToken) {
       fetchCompanyJobApplications()
     }
-  })
+  }, [companyToken])
 
 
   return applicants ? applicants.length === 0 ? ( 
