@@ -92,8 +92,12 @@ const ManageJobs = () => {
                 <td className='py-2 px-4 border-b max-sm:hidden'>{job.location}</td>
                 <td className='py-2 px-4 border-b text-center'>{job.applicants}</td>
                 <td className='py-2 px-4 border-b'>
-          <select className='w-full px-3 py-2 border-2 border-gray-300 rounded' value={job.visible} onChange={e => changeJobVisibility(job._id)}>
-                  </select>
+                  <input 
+                    type="checkbox" 
+                    className='scale-125' 
+                    checked={job.visible} 
+                    onChange={() => changeJobVisibility(job._id)}
+                  />
                 </td>
               </tr>
             ))}
